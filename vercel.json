@@ -1,0 +1,41 @@
+{
+  "name": "deep-wordsmith",
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install --legacy-peer-deps",
+  "env": {
+    "NEXT_PUBLIC_APP_URL": {
+      "type": "string",
+      "defaultValue": "https://deep-wordsmith.vercel.app"
+    },
+    "ENABLE_VISUAL_MNEMONICS": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "ENABLE_SEMANTIC_CLUSTERS": {
+      "type": "boolean",
+      "defaultValue": true
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
